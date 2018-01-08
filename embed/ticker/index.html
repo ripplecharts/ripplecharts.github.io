@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XRP Charts Embedded Chart</title>
+
+    <!-- D3 needs this -->
+    <meta charset="utf-8">
+
+    <script>
+      API = "https://data.ripple.com/v2";
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
+
+    <!-- compiled CSS -->
+
+    <!-- compiled JSON -->
+    <script type="text/javascript" src="json.js"></script>
+
+    <!-- compiled common js -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript" src="lodash.js"></script>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="ripple.js"></script>
+
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <style>
+      body {
+        font-family:'Open Sans', sans-serif;
+        text-align:center;
+        margin:0;
+        background:#fff;
+        height:100%;
+        position:absolute;
+        width:100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="liveTicker"></div>
+    <script>
+
+    var TW = new TickerWidget({
+      url : API,
+      id  : "liveTicker",
+      closeable : false,
+      info : true
+    });
+
+    TW.loadFromQS();
+
+    </script>
+  </body>
+</html>
